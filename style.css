@@ -13,6 +13,7 @@ h1 {
 }
 
 h2 {
+    color: #001453;
     font-size: 2rem;
     margin: 50px 0;
     text-align: center;
@@ -62,12 +63,13 @@ header {
 form {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap: 30px;
 }
 
-.side-by-side-label-input {
+form div {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
@@ -78,6 +80,10 @@ form input {
     border-radius: 2px;
     width: 190px;
     min-height: 35px;
+}
+
+textarea {
+    font-size: 2rem;
 }
 
 .form-submit-button {
@@ -97,8 +103,14 @@ form input {
 
 .answer-section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 50px;
+}
+
+.answer-section p {
+    padding: 20px;
+    border: solid #001453 2px;
 }
 
 footer {

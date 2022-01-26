@@ -30,7 +30,7 @@ function mod($a, $b){ // manually created as % doesn't always work accurately
   return $a - $b * floor($a/$b);
 }
 
-function encode($input){
+function encode(string $input){
   global $a, $b, $m;
   $message_array = [];
 
@@ -43,9 +43,7 @@ function encode($input){
   return $scrambled_message;
 }
 
-
-
-function decode($input){
+function decode(string $input){
   global $b, $m, $a_inv;
   $message_array = [];
 
@@ -55,6 +53,14 @@ function decode($input){
   }
   $message = implode("",$message_array);
   return $message;
+}
+
+if (isset($_POST["encryption_input"])) {
+    $encryptedMessage = encode($_POST["encryption_input"]);
+}
+
+if (isset($_POST["decryption_input"])) {
+    $decrypted_message = decode($_POST["decryption_input"]);
 }
 
 ?>
@@ -84,41 +90,36 @@ function decode($input){
   <section class="input-forms-section">
     <div class="input-forms-parent">
       <form method="post" action="#answer-section">
-        <h2>Calculate required supplies</h2>
-        <p>Instructions here</p>
-        <div class="side-by-side-label-input">
-          <label for="fence_length_input">Fence length (m):</label>
-          <input type="number" id="fence_length_input" name="fence_length_input">
+        <h2>Encryption</h2>
+        <div>
+          <label for="encryption_input">Message to be encrypted:</label>
+            <textarea id="encryption_input" name="encryption_input" rows="20" cols="70"></textarea>
         </div>
-        <input class="form-submit-button" type="submit" value="Calculate">
+        <input class="form-submit-button" type="submit" value="Encrypt">
         <a href="index.php">Reset</a>
       </form>
 
       <form method="post" action="#answer-section">
-        <h2>Calculate fence length</h2>
-        <p>Instructions here</p>
-        <div class="side-by-side-label-input">
-          <label for="posts_available_input">Posts available:</label>
-          <input type="number" id="posts_available_input" name="posts_available_input">
+        <h2>Decryption</h2>
+        <div>
+          <label for="decryption_input">Message to be decrypted:</label>
+            <textarea id="decryption_input" name="decryption_input" rows="20" cols="70"></textarea>
         </div>
-        <div class="side-by-side-label-input">
-          <label for="railings_available_input">Railings available:</label>
-          <input type="number" id="railings_available_input" name="railings_available_input">
-        </div>
-        <input class="form-submit-button" type="submit" value="Calculate">
+        <input class="form-submit-button" type="submit" value="Decrypt">
         <a href="index.php">Reset</a>
       </form>
     </div>
   </section>
   <section id="answer-section" class="answer-section">
+      <h2>Output</h2>
     <p>
       <?php
-      if (isset($_POST["fence_length_input"])) {
-        echo "$_POST[fence_length_input]m of fence will require $posts_required posts and $railings_required railings.";
+      if (isset($_POST["encryption_input"])) {
+          echo $encryptedMessage;
       }
 
-      if (isset($_POST["posts_available_input"])) {
-        echo "$_POST[posts_available_input] posts and $_POST[railings_available_input] railings can produce $returned_length"."m length of fencing.";
+      if (isset($_POST["decryption_input"])) {
+        echo $decrypted_message;
       }
       ?>
     </p>

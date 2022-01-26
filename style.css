@@ -1,0 +1,143 @@
+html {
+    font-size: 10px;
+    font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 10rem;
+    text-align: center;
+}
+
+h2 {
+    color: #001453;
+    font-size: 2rem;
+    margin: 50px 0;
+    text-align: center;
+}
+
+p {
+    font-size: 1.8rem;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+a, .form-submit-button {
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+header {
+    background-color: #001453;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.input-forms-section {
+    background-color: #ffffff;
+    color: #001453;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+form input {
+    border: solid 1px #001453;
+    border-radius: 2px;
+    width: 190px;
+    min-height: 35px;
+}
+
+textarea {
+    font-size: 2rem;
+    width: 100%;
+    min-height: 150px;
+    max-width: 600px;
+}
+
+.form-submit-button {
+    color: #001453;
+    border-color: #001453;
+    border-width: 2px;
+    border-style: solid;
+    background-color: transparent;
+    border-radius: 3px;
+}
+
+.form-submit-button:hover {
+    color: #ffffff;
+    background-color: #ff8000;
+    border-color: #ff8000;
+}
+
+.answer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+.answer-section p {
+    padding: 20px;
+    border: solid #001453 2px;
+}
+
+footer {
+    background-color: #ffffff;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    border-top: solid 1px #00145350;
+}
+
+footer div {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-item a {
+    color:#001453;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.25rem;
+}
+
+.footer-item a:hover {
+    color: #bdbdbd;
+}
+
+@media screen and (max-width: 800px) {
+    html {
+        font-size: 2vw;
+    }
+    h1 {
+        font-size: 7rem;
+    }
+
+    h2 {
+        font-size: 5rem;
+    }
+    .input-forms-section {
+        flex-direction: column;
+    }
+}

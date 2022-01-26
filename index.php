@@ -18,8 +18,6 @@ D(x) = a^-1 * (x - b) mod m
 
 To Do:
 substitute $shift instead of 32.
-
-user call_user_func in the menu but this global function doesnt seem to exist on codecademy...
 */
 
 $a = 67;// must be coprime with $m
@@ -41,7 +39,6 @@ function encode($input){
     $ex = (($a * (ord($input[$i])-32) + $b) % $m)+32;
     $message_array[] = chr($ex);
   }
-
   $scrambled_message = implode("",$message_array);
   return $scrambled_message;
 }
@@ -59,38 +56,6 @@ function decode($input){
   $message = implode("",$message_array);
   return $message;
 }
-
-function introduction(){
-  Echo "Hello and welcome to the Affine Cipher encryption service! Please select from one of the following options:\n\n";
-  menu();
-  }
-  
-function menu(){ // used when this ran in the terminal - leaving in here in case I want to refer back to it
-  $menu_options = [
-    1 => ["Encode a message" => "encode"],
-    2 => ["Decode a message" => "decode"],
-    3 => ["Quit and exit this program" => "quit"]
-    ];
-  foreach( $menu_options as $key => $options ) {
-      foreach( $options as $message => $function){
-        echo "$key = $message\n";
-      }
-  }
-  echo "\nEnter a number from above and press enter.\n\n";
-  $choice = readline(">>");
-
-  while (!(in_array($menu_options[$choice], $menu_options))){
-    echo "Please only a number from the menu.\n\n";
-    $choice = readline(">>");
-  }
-    if ($choice == 1) {
-      echo "\e[H\e[J";
-      encode("");
-  } elseif ($choice == 2){
-    echo "\e[H\e[J";
-    decode("");
-    }
-  }
 
 ?>
 

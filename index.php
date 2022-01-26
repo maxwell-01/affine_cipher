@@ -87,28 +87,22 @@ if (isset($_POST["decryption_input"])) {
 </header>
 
 <main>
-  <section class="input-forms-section">
-    <div class="input-forms-parent">
+  <section class="input-forms-section" id="input-forms-section">
       <form method="post" action="#answer-section">
         <h2>Encryption</h2>
-        <div>
-          <label for="encryption_input">Message to be encrypted:</label>
-            <textarea id="encryption_input" name="encryption_input" rows="20" cols="70"></textarea>
-        </div>
+        <label for="encryption_input">Message to be encrypted:</label>
+        <textarea id="encryption_input" name="encryption_input"></textarea>
         <input class="form-submit-button" type="submit" value="Encrypt">
-        <a href="index.php">Reset</a>
+        <a href="index.php#input-forms-section">Reset</a>
       </form>
 
       <form method="post" action="#answer-section">
         <h2>Decryption</h2>
-        <div>
-          <label for="decryption_input">Message to be decrypted:</label>
-            <textarea id="decryption_input" name="decryption_input" rows="20" cols="70"></textarea>
-        </div>
+        <label for="decryption_input">Message to be decrypted:</label>
+        <textarea id="decryption_input" name="decryption_input"></textarea>
         <input class="form-submit-button" type="submit" value="Decrypt">
-        <a href="index.php">Reset</a>
+        <a href="index.php#input-forms-section">Reset</a>
       </form>
-    </div>
   </section>
   <section id="answer-section" class="answer-section">
       <h2>Output</h2>

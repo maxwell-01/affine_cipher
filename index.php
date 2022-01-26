@@ -88,21 +88,19 @@ if (isset($_POST["decryption_input"])) {
 
 <main>
   <section class="input-forms-section" id="input-forms-section">
-      <form method="post" action="#answer-section">
+    <form method="post" action="#answer-section">
         <h2>Encryption</h2>
         <label for="encryption_input">Message to be encrypted:</label>
         <textarea id="encryption_input" name="encryption_input"></textarea>
         <input class="form-submit-button" type="submit" value="Encrypt">
-        <a href="index.php#input-forms-section">Reset</a>
-      </form>
+    </form>
 
-      <form method="post" action="#answer-section">
+    <form method="post" action="#answer-section">
         <h2>Decryption</h2>
         <label for="decryption_input">Message to be decrypted:</label>
         <textarea id="decryption_input" name="decryption_input"></textarea>
         <input class="form-submit-button" type="submit" value="Decrypt">
-        <a href="index.php#input-forms-section">Reset</a>
-      </form>
+    </form>
   </section>
   <section id="answer-section" class="answer-section">
       <h2>Output</h2>
@@ -114,6 +112,9 @@ if (isset($_POST["decryption_input"])) {
         echo $decrypted_message;
       }
       ?></p>
+      <form method="post" action="#answer-section">
+      <input type="submit" name="reset" value="Reset" class="form-submit-button">
+      </form>
   </section>
 </main>
 

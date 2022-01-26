@@ -82,7 +82,7 @@ if (isset($_POST["decryption_input"])) {
 <header>
 
   <h1>Encryption Service</h1>
-  <p>Hide your messages in plain site.</p>
+  <p>Hide your messages in a plain site.</p>
 
 </header>
 

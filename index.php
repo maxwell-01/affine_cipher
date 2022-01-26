@@ -106,17 +106,14 @@ if (isset($_POST["decryption_input"])) {
   </section>
   <section id="answer-section" class="answer-section">
       <h2>Output</h2>
-    <p>
-      <?php
+    <p><?php
       if (isset($_POST["encryption_input"])) {
           echo $encryptedMessage;
       }
-
       if (isset($_POST["decryption_input"])) {
         echo $decrypted_message;
       }
-      ?>
-    </p>
+      ?></p>
   </section>
 </main>
 
